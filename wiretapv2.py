@@ -1,11 +1,13 @@
+#!/usr/bin/env python3
+
 # coding=utf-8
 # Game and story created by DasGeek
 
 # import os
 # os.system('')
 import climage # install climage to convert png for terminal
-import time
-import random #for fight calcullations
+import time # provides various time-related functions
+import random #for fight calculations
 import colorama # text color
 from colorama import init, Fore, Back, Style
 # Initializes Colorama
@@ -45,8 +47,11 @@ def game():
         print(' ')
         print(gametitle)
         print(' ')
-        input("Press Enter to continue.")
-        print(Fore.RED +"""
+        input("Press Enter to continue.") # forces pause and user interaction
+        
+        # Testing out Fore.RED to convert text to a different color. Can use to differentiate narration vs. actions etc.
+        
+        print(Fore.RED +""" 
 
             You step out onto the streets and take a deep breath. 
             Your augment goes to work producing a filtered blast 
@@ -56,13 +61,14 @@ def game():
             of neon lights and animated holograms force-feeding 
             its message deep into wandering eyes.
 
-            Silhouettes of women dancing alongside augments and 
-            quick stop convenience stores. There are brands of every 
-            type, all promoting themselves with faces of models and 
-            celebrities and influencers begging to be remembered.
+            Silhouettes of women dancing alongside various types of 
+            augments and quick stop convenience stores. There are 
+            brands of every type, all promoting themselves with faces 
+            of models and celebrities and influencers begging to be 
+            remembered.
 
             """)
-        
+        input("Press Enter to continue.")
         print(city)
         
         print(' ')
@@ -71,7 +77,7 @@ def game():
         print("""
             
             The wet streets and towering buildings reach as far as 
-            the eyes could see. The assortment of colors from the 
+            the eyes can see. The assortment of colors from the 
             digital signs bouncing off the grey and black concrete 
             jungle and their glass patios. An endless barrage of lights 
             highlighting the filth of an overpopulated city that had 
@@ -85,14 +91,16 @@ def game():
         
         print("""
             
-            There was an assortment of street vendors and loitering 
-            patrons that seem to go on in an endless maze. There 
+            An assortment of street vendors and loitering 
+            patrons seem to go on in an endless maze. There 
             are no mountain views, grass fields, or signs of natural life. 
-            You've arrived at Zire. A city once known as a hub for great 
-            prosperity but as the population grew the people built up into 
-            the skies until they couldn’t build up any longer, so they started 
+            You've arrived at Zire. 
+
+            A city once known as a hub for great prosperity but as the 
+            population grew the people built up into the skies until they 
+            couldn’t build up any longer, so they started 
             building underground. Signs pointing towards underground tunnels 
-            leading to the armpit of civilization known as The Beneath. 
+            leading to the armpit of civilization known as 'The Beneath'. 
             Flying vehicles of various shapes and sizes consumed the 
             skies swarming like hornets protecting a nest. The whizzing 
             and buzzing blending into the sounds of bustling 
@@ -127,15 +135,15 @@ def scene1():
         if c1.lower() == "take":
             print("""
             
-                "You scrumage inside and find old pair of gym clothes.
+                "You scrumage inside the weathered bag and find an old pair of gym clothes.
                 As you keep searching you notice a zipper pocket on the 
                 outside of the bag with something heavy inside. 
                 Upon inspection of the pocket you find a pair of brass knuckles."
             
             """)
-            inventory.append("Brass Knuckles")
+            inventory.append("Brass Knuckles") # add item into inventory
             print(" ")
-            print(str(inventory) + " has been added to your inventory")
+            print(str(inventory) + " has been added to your inventory") #print the inventory out to the player
             print(" ")
             ans = "correct"
             scene2()
@@ -327,30 +335,123 @@ def fight1():
             print("You regret your poor decision making")
             fight1()
 
-"""
-Story choices above all lead here eventually.
 
-"""
+# Story choices above all lead here eventually.
+
+
 def scene3():
-    print("Well, well, you're finally awake.")
-    print("That drone hit you with a tranquilzer dart. What were you thinking attacking a corporate drone with no weapons?")
-    input("Press ENTER to continue")
-    print("You look around and notice a storage room full of metal shelves, boxes overflowing with electronics")
-    print("My name is Uzman. Nice to meet you.")
-    input("Press ENTER to continue")
-    print("As your vision becomes more clear you notice that you're strapped down to a table. ")
-    print("You look down and notice your augments are removed from your arms and legs. There are large open wounds where your augments once resided")
-    print("You see a scalpel covered in blood on the table beside you. ")
-    print("You try to access your HUD but there is no overlay")
-    input("Press ENTER to continue")
-    print("Imagine my surprise when I found you passed out with over a million Eth in augments.")
-    print("Just know it's nothing personal. You don't look a gift horse in the mouth as they say.")
-    print("I could leave you for dead and dump you back where I found you. I'm greedy but I'm not evil, you know")
-    input("Press ENTER to continue")
-    print("You notice you can move your fingers on your right arm. Pain starts to register as you become more awake and the pain sets in.")
-    input("Press ENTER to continue")
-    print("You're not registered with the government...so it's not like they would even investigate your death.")
+    print("""
+        Well, well, you're finally awake. That drone hit you with a 
+        tranquilzer dart. What were you thinking attacking a 
+        corporate drone with no weapons?
+        """)
+    
+    time.sleep(2.0) #make story auto continue after pause for reader
+    
+    print("""
+        You look around and notice a storage room full of metal shelves, 
+        boxes overflowing with electronics. 
+    """)
+
+    time.sleep(2.0)
+    
+    print("""
+        My name is Uzman. Nice to meet you.
+    """)
+    
+    time.sleep(2.0)
+    
+    print("""
+        As your vision becomes more clear you notice that you're strapped 
+        down to a table. You look down and notice your augments have been 
+        removed from your arms and legs. There are large open wounds 
+        where your augments once resided. You see a scalpel covered 
+        in blood on the table beside you. You try to access your HUD 
+        but there is no overlay
+        """)
+
+    time.sleep(2.0)
+
+    print("""
+        Imagine my surprise when I found you passed out with over a million 
+        Eth in augments. Just know it's nothing personal. You don't look a 
+        gift horse in the mouth as they say. I could leave you for dead and 
+        dump you back where I found you. 
+        I'm greedy...but I'm not evil, you know?
+        """)
+    
+    time.sleep(2.0)
+    
+    print("""
+        You notice you can move your fingers on your right arm. 
+        Pain starts to register as you become more awake and reality 
+        sets in.
+        """)
+    
+    time.sleep(2.0)
+    
+    print("""
+        You're not registered with the government...
+        so it's not like they would even investigate your death.
+        """)
+    
+    input("Press Enter to continue.")
+
+
+    print("What your name offworlder? : ")
+    name = input(">>>")
+    print ("Well hello "+name)
+    print ("""
+        'So here is what's going to happen next. I'm going to put you back to 
+        sleep and sew you up. No need to thank me kid. You're going to be 
+        dumped in 'The Beneath' where you will likely have your wounds 
+        become infected by all of sewage and filth and die of infection. 
+        If you do live, well, you will wish you didn't. I should just as well
+        kill you right here and now. The only thing keeping you alive is the 
+        fact that someone important told me you're not to die today. They want
+        you alive for something. Do you know what that something is? 
+        """)
     print("")
+    print("You respond with 'money'? or 'die scum' ")
+    print("")
+    ans = 'correct'
+    c3 = input(">>>")
+    ans = "incorrect"
+    while ans == "incorrect":
+        if c3.lower()== 'money':
+            print("""
+                'Money drives me...not them.'
+                """)
+            print("")
+            ans = "correct"
+            scene4()
+        elif c3.lower()=='die scum':
+            print("""
+                'No, wrong answers.'
+                """)
+            print("")            
+            ans = "correct"
+            scene4()
+
+def scene4():
+    print(""" 
+        Vengeance...I'm guessing? Lots and lots of pain they want to 
+        cause you. You must have messed up all kinds of bad for these
+        people to want you to suffer. I'm also to tell you that 
+        I'm phase one of their vengeance. Phase two...'Uzman shrugs 
+        his shoulders' probably going to be even worse. 
+
+        Anyways...that's all I'm supposed to tell you. So goodnight and 
+        thank you for the augments. I'm going to use some of these personally
+        for myself. 
+
+        """)
+    end()
+
+def end():
+    print ("You've reached the end for now...")
+    quit()
+
 
    # c3 = input(">>")
    # print ("What would you like to do? A. Fight B. Scream")
