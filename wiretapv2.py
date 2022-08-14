@@ -51,7 +51,7 @@ def game():
         
         # Testing out Fore.RED to convert text to a different color. Can use to differentiate narration vs. actions etc.
         
-        print(Fore.RED +""" 
+        print(""" 
 
             You step out onto the streets and take a deep breath. 
             Your augment goes to work producing a filtered blast 
@@ -159,8 +159,12 @@ def scene1():
 
 # START OF SCENE 2
 def scene2():
-    print("Your personal assistant comes to life with a map. Your path leads you to a sidewalk which goes off to the left and right, which direction do you want to go?"
-    )
+    print("""
+        Your personal assistant comes to life with a map. 
+        Your path leads you to a sidewalk which goes off to the 
+        left and right, which direction do you want to go?"
+    """)
+    print("")
     print("Do you want to walk to the left or right?")
     c1 = input(">>")
     ans = "incorrect"
@@ -192,14 +196,14 @@ def scene2():
             """)
             input("Press Enter to continue.")
             ans='correct'
-            c3 = input(">>")
-            while ans == "incorrect":
-                if c3.lower =="talk":
-                    print("this is a test")
-                    scene3()
-                elif c3.lower =="run":
-                    print("this is also a test")
-                    scene3()
+            #c3 = input(">>")
+            #while ans == "incorrect":
+             #   if c3.lower =="talk":
+              #      print("this is a test")
+               #     scene3()
+                #elif c3.lower =="run":
+                 #   print("this is also a test")
+                  #  scene3()
             print(str(inventory))
             scene3()
             ans = 'correct'
@@ -240,6 +244,9 @@ def scene2():
             input("Press Enter to continue.")
             print("Do you want to 'register'? or 'attempt hack' ? ")
             ans = 'correct'
+        else:
+            print("ENTER THE CORRECT CHOICE! Lowercase 'left' or 'right?'")
+            c1 = input(">>")   
     c2 = input(">>")
     ans = "incorrect"
     while ans == "incorrect":
@@ -280,7 +287,9 @@ def scene2():
             print("you hack it")
             inventory.append("eye augmentation")
             ans = "correct"
-
+        else:
+            print("ENTER THE CORRECT CHOICE! Lowercase 'register' or 'attempt hack?'")
+            c1 = input(">>")       
 
 # Define Fight 1 Simple Enemy
 def fight1():
@@ -289,7 +298,7 @@ def fight1():
     print("***You Are In A Fight***")
     print("A: punch")
     print("B: kick")
-    if "Brass Knuckles" in inventory:
+    if "Brass Knuckles" in inventory: #looks in inventory to determine whether to give option C
         print("C: Use Brass Knuckles")
     decision=input('What action do you choose: A,B, or C? ')
 
@@ -340,7 +349,7 @@ def fight1():
 
 
 def scene3():
-    print("""
+    print(Fore.RED +"""
         Well, well, you're finally awake. That drone hit you with a 
         tranquilzer dart. What were you thinking attacking a 
         corporate drone with no weapons?
@@ -355,7 +364,7 @@ def scene3():
 
     time.sleep(2.0)
     
-    print("""
+    print(Fore.RED +"""
         My name is Uzman. Nice to meet you.
     """)
     
@@ -370,9 +379,9 @@ def scene3():
         but there is no overlay
         """)
 
-    time.sleep(2.0)
+    input("Press Enter to continue.")
 
-    print("""
+    print(Fore.RED +"""
         Imagine my surprise when I found you passed out with over a million 
         Eth in augments. Just know it's nothing personal. You don't look a 
         gift horse in the mouth as they say. I could leave you for dead and 
@@ -388,9 +397,9 @@ def scene3():
         sets in.
         """)
     
-    time.sleep(2.0)
+    input("Press Enter to continue.")
     
-    print("""
+    print(Fore.RED +"""
         You're not registered with the government...
         so it's not like they would even investigate your death.
         """)
@@ -401,16 +410,18 @@ def scene3():
     print("What your name offworlder? : ")
     name = input(">>>")
     print ("Well hello "+name)
-    print ("""
-        'So here is what's going to happen next. I'm going to put you back to 
-        sleep and sew you up. No need to thank me kid. You're going to be 
-        dumped in 'The Beneath' where you will likely have your wounds 
-        become infected by all of sewage and filth and die of infection. 
-        If you do live, well, you will wish you didn't. I should just as well
-        kill you right here and now. The only thing keeping you alive is the 
-        fact that someone important told me you're not to die today. They want
-        you alive for something. Do you know what that something is? 
-        """)
+    print (Fore.RED +"""
+        'So here is what's going to happen next %s. I'm going to put 
+        you back to sleep and sew you up. No need to thank me kid. 
+        You're going to be dumped in 'The Beneath' where you will 
+        likely have your wounds become infected by all of sewage 
+        and filth and die of infection. If you do live, well, 
+        you will wish you didn't. I should just as well
+        kill you right here and now. The only thing keeping you 
+        alive is the fact that someone important told me you're 
+        not to die today. They wantyou alive for something. 
+        Do you know what that something is? 
+        """%name) # The %s is a operator to insert variable at the end we add the variable we want to display there %name in this case
     print("")
     print("You respond with 'money'? or 'die scum' ")
     print("")
@@ -419,22 +430,24 @@ def scene3():
     ans = "incorrect"
     while ans == "incorrect":
         if c3.lower()== 'money':
-            print("""
+            print(Fore.RED +"""
                 'Money drives me...not them.'
                 """)
             print("")
             ans = "correct"
             scene4()
         elif c3.lower()=='die scum':
-            print("""
-                'No, wrong answers.'
+            print(Fore.RED +"""
+                'No, wrong answer.'
                 """)
             print("")            
             ans = "correct"
             scene4()
-
+        else:
+            print("ENTER THE CORRECT CHOICE! Lowercase 'money' or 'die scum?'")
+            c3 = input(">>>")   
 def scene4():
-    print(""" 
+    print(Fore.RED +""" 
         Vengeance...I'm guessing? Lots and lots of pain they want to 
         cause you. You must have messed up all kinds of bad for these
         people to want you to suffer. I'm also to tell you that 
@@ -442,7 +455,7 @@ def scene4():
         his shoulders' probably going to be even worse. 
 
         Anyways...that's all I'm supposed to tell you. So goodnight and 
-        thank you for the augments. I'm going to use some of these personally
+        thank you for the augments. I'm going to use these personally
         for myself. 
 
         """)
