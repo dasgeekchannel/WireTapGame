@@ -358,35 +358,55 @@ def scene3():
     time.sleep(2.0) #make story auto continue after pause for reader
     
     print("""
-        You look around and notice a storage room full of metal shelves, 
-        boxes overflowing with electronics. 
+        You notice you're in a storage room with rows of of metal shelves, 
+        piled high with boxes that are overflowing with electronics, 
+        augments, and parts of various robotics.  
     """)
 
     time.sleep(2.0)
     
+    print("""
+        Your vision is suddenly consumed with a strange bald man
+        wearing a white doctors coat and wearing a headband full of
+        various gadgets and lights. On one eye he had a magnification
+        glass hanging over. He was bent over the table looking at your
+        legs. You notice his lips are slobbery amplified by the lights
+        beaming down from his headband, drool is pooling at the sides 
+        of his mouth.The man turns and you can see his magnified right eye 
+        grow wide with surprise.  
+            """)
+
+    time.sleep(1.0)
+
     print(Fore.RED +"""
-        My name is Uzman. Nice to meet you.
-    """)
+
+        Well, well, look who decided to awaken early. 
+        The name is Uzman. Uh...Nice to meet you.
+        """)
     
-    time.sleep(2.0)
+    time.sleep(1.0)
     
     print("""
-        As your vision becomes more clear you notice that you're strapped 
-        down to a table. You look down and notice your augments have been 
-        removed from your arms and legs. There are large open wounds 
-        where your augments once resided. You see a scalpel covered 
-        in blood on the table beside you. You try to access your HUD 
-        but there is no overlay
+        As your vision becomes more clear you realize you're strapped 
+        down to a metal table. You strain your neck to look down as 
+        your vision clears and notice your augments have been removed 
+        from your legs. There are large crude stitches and staples running
+        down to your knee where your augments once resided. 
+        You try to access your HUD but, an error blinks on across
+        your overlay
+        
+        'connection lost'.
+        
         """)
 
     input("Press Enter to continue.")
 
     print(Fore.RED +"""
-        Imagine my surprise when I found you passed out with over a million 
+        Imagine my surprise when I found out you had over a million 
         Eth in augments. Just know it's nothing personal. You don't look a 
-        gift horse in the mouth as they say. I could leave you for dead and 
-        dump you back where I found you. 
-        I'm greedy...but I'm not evil, you know?
+        gift horse in the mouth as they say. Don't fret over the legs.
+        I could leave you open take everything and dump you back where I 
+        found you. I'm greedy...but I'm not evil, you know?
         """)
     
     time.sleep(2.0)
@@ -409,36 +429,53 @@ def scene3():
 
     print("What your name offworlder? : ")
     name = input(">>>")
-    print ("Well hello "+name)
-    print (Fore.RED +"""
+    print("Well hello "+name)
+    print(Fore.RED +"""
         'So here is what's going to happen next %s. I'm going to put 
-        you back to sleep and sew you up. No need to thank me kid. 
-        You're going to be dumped in 'The Beneath' where you will 
-        likely have your wounds become infected by all of sewage 
-        and filth and die of infection. If you do live, well, 
-        you will wish you didn't. I should just as well
-        kill you right here and now. The only thing keeping you 
-        alive is the fact that someone important told me you're 
-        not to die today. They wantyou alive for something. 
-        Do you know what that something is? 
-        """%name) # The %s is a operator to insert variable at the end we add the variable we want to display there %name in this case
+        you back under and take the rest of these augs. 
+        I'll sew you up...don't you worry. 
+        """)
+    time.sleep(1)
+    print("""
+        Uzman holds up his hand. You notice it's trembling. A smile
+        cracks across his lips. 
+        """)
+        
+    print(Fore.RED +"""
+        When you wake up you'll be knee deep in 'The Beneath'. The stinking,
+        wretched, armpit of our society. There...well, you'll likely get 
+        an infection in your wounds from the sewage and filth...then a fever, 
+        your wounds will get all black and green, your skin will start 
+        rotting and pulling away from the wounds and then after a lot of 
+        pain you will die. But, if you do survive, well, you'll wish you 
+        didn't. No augs, no weapons, they'll eat you alive. 
+        Quite literally too.
+        
+        Now listen closely...don't even think about getting revenge. 
+        I have eyes all over. Electronic and natural, they all look 
+        out for Uncle Uzman. You understand what I'm telling 
+        you offlander?
+        """)
+
     print("")
-    print("You respond with 'money'? or 'die scum' ")
+    print("You respond with 'no'? or 'die scum' ")
     print("")
     ans = 'correct'
     c3 = input(">>>")
     ans = "incorrect"
     while ans == "incorrect":
-        if c3.lower()== 'money':
+        if c3.lower()== 'no':
             print(Fore.RED +"""
-                'Money drives me...not them.'
+                Too bad, you'll be all natural soon enough. Nighty night
                 """)
             print("")
             ans = "correct"
             scene4()
         elif c3.lower()=='die scum':
             print(Fore.RED +"""
-                'No, wrong answer.'
+                I'll take that as a yes. Just for that I'm going to take some 
+                teeth while your out too. Street market price on natural teeth
+                is through the roof lately. 
                 """)
             print("")            
             ans = "correct"
@@ -447,19 +484,12 @@ def scene3():
             print("ENTER THE CORRECT CHOICE! Lowercase 'money' or 'die scum?'")
             c3 = input(">>>")   
 def scene4():
-    print(Fore.RED +""" 
-        Vengeance...I'm guessing? Lots and lots of pain they want to 
-        cause you. You must have messed up all kinds of bad for these
-        people to want you to suffer. I'm also to tell you that 
-        I'm phase one of their vengeance. Phase two...'Uzman shrugs 
-        his shoulders' probably going to be even worse. 
-
-        Anyways...that's all I'm supposed to tell you. So goodnight and 
-        thank you for the augments. I'm going to use these personally
-        for myself. 
-
+    print(""" 
+        Uzman walks over to the counter grabbing a syringe. He slowly squeezes
+        the plunger until a clear liquid drips out the top. You hear him
+        chuckling to himself as he turns back towards you. 
         """)
-    end()
+    scene5()
 
 def end():
     print ("You've reached the end for now...")
@@ -473,7 +503,43 @@ def end():
    #     if c1 = "A"
    #     print 
 
+def scene5():
+    print("Make a choice: 'look around' or 'scream'")
+    ans = 'incorrect'
+    c5 = input(">>>")
+    while ans =='incorrect':
+        if c5.lower() == 'look around':
+            print ("""
+            You look around the room and the scalpel is within reach.
+            You reach over but the pain shoots through your arm like
+            a thousand razers. Your fingers manage to grab the handle
+            of blade. You manage to get it straight up and down but
+            struggle to pull it towards you as your arm feels like 
+            a dead weight.
 
+            You see Uzman rushing back towards you. He suddenly slips
+            on a trail of blood falling face first onto the surgical tray.
+            The scalpel you were holding goes straight into his eye.
+            Uzman's weight collapses the table and you lose grip.
+            """)
+            ans == 'correct'
+            scene6()
+        elif c5.lower() =='scream':
+            print ("""
+
+            You start to panic and scream for help as loud as you can
+            Uzman gets visibly agitated and shoves the needs into the 
+            IV. You start to loose consciousness as the room begins to
+            spin
+            """)
+            ans=='correct'
+            scene7()
+
+def scene6():
+    end()
+
+def scene7():
+    end()
 
 
 # either way they wake up in the store from Drone battle or they travel safely to the store going right
