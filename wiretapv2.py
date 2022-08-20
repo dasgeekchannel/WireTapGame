@@ -9,6 +9,7 @@ import climage # install climage to convert png for terminal
 import time # provides various time-related functions
 import random #for fight calculations
 import colorama # text color
+import random
 from colorama import init, Fore, Back, Style
 # Initializes Colorama
 init(autoreset=True)
@@ -19,7 +20,20 @@ inventory = []
 gametitle = climage.convert("wiretap.png")
 drone = climage.convert("drone.png")
 city = climage.convert("city_cyberpunk.jpg")
-total_hp = 150
+
+# random int, str, and health generator
+intelligence=[4,6,10]
+random_int=random.choice(intelligence)
+
+
+strength=[4,6,10]
+random_str=random.choice(strength)
+
+
+
+health=[100,150,200]
+total_hp=random.choice(health)
+
 
 
 
@@ -43,7 +57,7 @@ def game():
     if start == True:
         print(" ")
         print('Introduction')
-        print(f"Your HP is {total_hp}") #using f string to combine string with numerics
+        #print(f"Your HP is {total_hp}") #using f string to combine string with numerics
         print(' ')
         print(gametitle)
         print(' ')
@@ -51,6 +65,12 @@ def game():
         
         # Testing out Fore.RED to convert text to a different color. Can use to differentiate narration vs. actions etc.
         
+        print("Stats have been randomly generated for your character:")
+
+        print("Your strength is >>> "+str(random_str))
+        print("Your intelligence is >>> "+str(random_int))
+        print("Your hp is >>> "+str(total_hp))
+        time.sleep(2)
         print(""" 
 
             You step out onto the streets and take a deep breath. 
@@ -284,9 +304,21 @@ def scene2():
             fight1()
             ans = "correct"
         elif c2.lower()=="attempt hack":
-            print("you hack it")
+            print("""
+                You hack it but not before it shoots something.
+                A numbness rises from your legs. The scenery
+                begins to blur. You and the drone fall to the
+                ground in unison. The eye of the drone hangs
+                from some wires. You grab it and yank it from
+                the wires. As you see the augment in your grip
+                your vision goes dark. You have a few more 
+                moments of consciousness before you pass 
+                out entirely.
+
+                """)
             inventory.append("eye augmentation")
             ans = "correct"
+            scene3()
         else:
             print("ENTER THE CORRECT CHOICE! Lowercase 'register' or 'attempt hack?'")
             c1 = input(">>")       
@@ -510,25 +542,33 @@ def scene5():
     while ans =='incorrect':
         if c5.lower() == 'look around':
             print ("""
-            You look around the room and the scalpel is within reach.
-            You reach over but the pain shoots through your arm like
-            a thousand razers. Your fingers manage to grab the handle
-            of blade. You manage to get it straight up and down but
-            struggle to pull it towards you as your arm feels like 
-            a dead weight.
+            You look around the room and notice the scalpel is just 
+            within reach. Your arm moves towards it, but the pain shoots 
+            through your arm like a thousand razers. Fighting through it
+            your fingers manage to grab the metal handle of the blade. 
+            The signals from your brain to your hand are in slow motion
+            yet you manage to get it straight and into your fist tightly
+            the sharp scalpel upright, ready to slash. Struggling you 
+            start to pull it back towards you, carefully trying not to
+            knock anything off the table. Just as you clear the tray
+            the metal handle connects sending a loud 'ting'.
 
-            You see Uzman rushing back towards you. He suddenly slips
-            on a trail of blood falling face first onto the surgical tray.
+            Uzman sees you, he turns and comes rushing. His hand holding
+            the syringe extended outwards. Suddenly Uzman slips on a pool 
+            of blood. His shoes screech against the tile floors and he 
+            crashes face first onto the surgical tray.
             The scalpel you were holding goes straight into his eye.
-            Uzman's weight collapses the table and you lose grip.
+            Uzman's weight collapses the side table and you lose grip of
+            the scalpel which gets shoved further into Uzmans head as his
+            head smacks the floor.
             """)
             ans == 'correct'
             scene6()
         elif c5.lower() =='scream':
             print ("""
 
-            You start to panic and scream for help as loud as you can
-            Uzman gets visibly agitated and shoves the needs into the 
+            You start to panic and scream for help as loud as you can.
+            Uzman gets visibly agitated and shoves the needle into the 
             IV. You start to loose consciousness as the room begins to
             spin
             """)
