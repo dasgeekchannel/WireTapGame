@@ -65,11 +65,11 @@ def game():
         
         # Testing out Fore.RED to convert text to a different color. Can use to differentiate narration vs. actions etc.
         
-        print("Stats have been randomly generated for your character:")
+        print(Style.BRIGHT+"Stats have been randomly generated for your character:")
 
-        print("Your strength is >>> "+str(random_str))
-        print("Your intelligence is >>> "+str(random_int))
-        print("Your hp is >>> "+str(total_hp))
+        print(Fore.BLUE+"Your strength is >>> "+str(random_str))
+        print(Fore.BLUE+"Your intelligence is >>> "+str(random_int))
+        print(Fore.BLUE+"Your hp is >>> "+str(total_hp))
         time.sleep(2)
         print(""" 
 
@@ -513,8 +513,9 @@ def scene3():
             ans = "correct"
             scene4()
         else:
-            print("ENTER THE CORRECT CHOICE! Lowercase 'money' or 'die scum?'")
+            print("ENTER THE CORRECT CHOICE! Lowercase 'no' or 'die scum?'")
             c3 = input(">>>")   
+
 def scene4():
     print(""" 
         Uzman walks over to the counter grabbing a syringe. He slowly squeezes
@@ -574,7 +575,9 @@ def scene5():
             """)
             ans=='correct'
             scene7()
-
+        else:
+            print("ENTER THE CORRECT CHOICE! Lowercase 'look around' or 'scream?'")
+            c5 = input(">>")  
 def scene6():
     end()
 
