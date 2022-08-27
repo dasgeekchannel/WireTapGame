@@ -524,9 +524,15 @@ def scene4():
         """)
     scene5()
 
+#Ending with for loop to count backwards. Sleep counts 1 second in between.
 def end():
+    final_count = [5,4,3,2,1]
+    for timer in final_count:
+        print(timer)
+        time.sleep(1)
     print ("You've reached the end for now...")
     quit()
+
 
 
    # c3 = input(">>")
@@ -588,3 +594,8 @@ def scene7():
 # either way they wake up in the store from Drone battle or they travel safely to the store going right
 
 game()
+
+
+
+# Corporation is going bankrupt so as an employee of x corp.
+# They offered payment by repo on augs of their own employee.
